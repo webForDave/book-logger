@@ -1,0 +1,11 @@
+<h1>All books</h1>
+
+<% if (allBooks.length != 0) { %>
+    <% allBooks.forEach(book => { %>
+        <h3><%= book.title %></h3>
+        <p><%= book.author %></p>
+    <%}) %>
+<%} else { %>
+    <h5>No books available</h5>
+<%} %>
+<a href="/books/new">Create new book</a>
