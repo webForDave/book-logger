@@ -1,0 +1,26 @@
+{
+  "name": "book-logger",
+  "version": "1.0.0",
+  "description": "A legendary express app that lets users manage a collection of book/books stored in memory. With exciting middleware and dynamic routes 😎🚀",
+  "homepage": "https://github.com/webForDave/book-logger#readme",
+  "bugs": {
+    "url": "https://github.com/webForDave/book-logger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webForDave/book-logger.git"
+  },
+  "license": "ISC",
+  "author": "David Akinola",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "http-status-codes": "^2.3.0"
+  }
+}
