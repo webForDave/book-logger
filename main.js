@@ -12,7 +12,8 @@ app.use(expressLayouts)
 app.get("/", homeController.homeProcessor);
 app.get("/books", homeController.getAllBooks);
 app.get("/books/new", homeController.createNewBook);
-app.post("/books/new", homeController.newBookSuccess)
+app.post("/books/new", homeController.newBookSuccess);
+app.get("/books/:bookTitle", homeController.bookDetail);
 
 app.listen(app.get("port"), () => {
     console.log(`Server running on port http://localhost:${app.get("port")}`);

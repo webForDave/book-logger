@@ -1,6 +1,6 @@
 let books = [
     {
-        title: "1964",
+        title: "1946",
         author: "David Akinola"
     }
 ];
@@ -19,4 +19,16 @@ exports.createNewBook = (req, res) => {
 
 exports.newBookSuccess = (req, res) => {
     res.render("bookAdded");
+}
+
+exports.bookDetail = (req, res) => {
+    let specificBook = req.params.bookTitle;
+
+    books.forEach(book => {
+        if (book.title == specificBook) {
+            res.render("specificBook")
+        } else {
+            res.send("book not found")
+        }
+    })    
 }
