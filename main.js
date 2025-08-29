@@ -20,17 +20,20 @@ db.once("open", () => {
     console.log("Connection to database successful!");
 })
 
-Subscriber.create({
-    title: "Tomorrow died yesterday",
-    author: "Chimaka",
-})
-.then(subscriber => {
-    console.log(subscriber);
-})
-.catch(error => {
-    console.log(error,message);
-});
+// Subscriber.create({
+//     title: "Tomorrow died yesterday",
+//     author: "Chimaka",
+// })
+// .then(subscriber => {
+//     console.log(subscriber);
+// })
+// .catch(error => {
+//     console.log(error,message);
+// });
 
 app.get("/", homeController.homeProccesor);
+
+app.use(homeController.notFoundError);
+app.use(homeController.internalServerError)
 
 app.listen(app.get("port"), () => console.log(`🚀🚀 Server running on http://localhost:${app.get("port")}`));
