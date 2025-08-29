@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const layouts = require("express-ejs-layouts");
 const homeController = require("./controllers/homeController");
+const booksController = require("./controllers/booksController");  
 const mongoose = require("mongoose");
 const Subscriber = require("./models/books");
 
@@ -20,18 +21,19 @@ db.once("open", () => {
     console.log("Connection to database successful!");
 })
 
-// Subscriber.create({
-//     title: "Tomorrow died yesterday",
-//     author: "Chimaka",
-// })
-// .then(subscriber => {
-//     console.log(subscriber);
-// })
-// .catch(error => {
-//     console.log(error,message);
-// });
+Subscriber.create({
+    title: "Tomorrow died yesterday",
+    author: "Chimaka",
+})
+.then(subscriber => {
+    console.log(subscriber);
+})
+.catch(error => {
+    console.log(error,message);
+});
 
 app.get("/", homeController.homeProccesor);
+app.get("/books", booksController.getAllBooks);
 
 app.use(homeController.notFoundError);
 app.use(homeController.internalServerError)
