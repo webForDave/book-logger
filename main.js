@@ -21,19 +21,21 @@ db.once("open", () => {
     console.log("Connection to database successful!");
 })
 
-Subscriber.create({
-    title: "Tomorrow died yesterday",
-    author: "Chimaka",
-})
-.then(subscriber => {
-    console.log(subscriber);
-})
-.catch(error => {
-    console.log(error,message);
-});
+// Subscriber.create({
+//     title: "The gods are not crazy",
+//     author: "David Akinola",
+// })
+// .then(subscriber => {
+//     console.log(subscriber);
+// })
+// .catch(error => {
+//     console.log(error.message);
+// });
 
 app.get("/", homeController.homeProccesor);
 app.get("/books", booksController.getAllBooks);
+app.get("/books/new", booksController.createNewBook);
+app.post("/books/new", booksController.newBookConfirmed);
 
 app.use(homeController.notFoundError);
 app.use(homeController.internalServerError)
